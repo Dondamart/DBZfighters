@@ -137,4 +137,3 @@ $equipo2 = [$vegeta, $yamcha];
 ataque($equipo1, $equipo2);
 
 
-//GET y SET
