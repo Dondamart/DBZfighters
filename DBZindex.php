@@ -134,12 +134,32 @@ $yamcha = new Personaje("Yamcha", 740, 35, 60, true);
 $piccolo= new Personaje("Piccolo", 1140, 35, 60, true);
 $freezer=new Personaje("freezer", 1040, 65, 60, true);
 
-// Agregar personajes a los equipos
-$equipo1 = [$goku, $crillin,$freezer];
-$equipo2 = [$vegeta, $yamcha,$piccolo];
+?>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBZ Simulator</title>
+</head>
+<body>
 
-// Realizar el combate
-combate($equipo1, $equipo2);
+<form action="DBZ.php" method="post">
+    <label for="team1">
+        Choose your characters for the Team 1
+    </label>
+        <select name="plantilla" value="team1" multiple>
+            <?php
+            foreach (Personaje::$plantilla as $key => $luchador) {
+                $key+=1;
+                echo "<option value='$luchador->nombre'>$key"." "."$luchador->nombre</option>";
+            }
+            ?>
+        </select>
+    <input type="submit" value="team1">
+</form>
 
+</body>
+</html>
 
